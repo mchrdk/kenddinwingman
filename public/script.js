@@ -45,7 +45,7 @@ function updateGame() {
                     document.getElementById('score').innerText = `Score: ${score}`;
 
                     if (score === 0) {
-                        window.location.href = '/game-over.html';
+                        window.location.href = '/game-over.htm';
                     } else {
                         updateGame();
                     }
