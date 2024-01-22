@@ -3,3 +3,24 @@
     height: 100%;
     margin: 10px;
 }
+#name {
+    font-size: 24px; /* Set the font size to 24px, adjust as needed */
+    font-weight: bold; /* Optional: makes the text bold */
+    margin: 10px 0; /* Optional: adds some spacing around the name */
+    /* Add any other styling properties you need */
+}
+
+#score {
+    font-size: 24px; /* Set the font size to 24px, adjust as needed */
+    font-weight: bold; /* Optional: makes the text bold */
+    margin: 10px 0; /* Optional: adds some spacing around the name */
+    /* Add any other styling properties you need */
+}
+
+#department {
+    font-size: 35px; /* Set the font size to 24px, adjust as needed */
+    font-weight: bold; /* Optional: makes the text bold */
+    margin: 10px 0; /* Optional: adds some spacing around the name */
+    color: green
+    /* Add any other styling properties you need */
+}
