@@ -8,18 +8,27 @@ function flashBackgroundRed() {
     }, 500); // Change the background color back after 500 milliseconds
 }
 
-function showDepartment(department) {
-    const departmentDiv = document.getElementById('department');
-    departmentDiv.innerText = department;
-    departmentDiv.style.display = 'block';
+function showunit(unit) {
+    const unitDiv = document.getElementById('unit');
+    unitDiv.innerText = unit;
+    unitDiv.style.display = 'block';
 
     setTimeout(() => {
-        departmentDiv.style.display = 'none';
-    }, 1000); // Hide the department after 1000 milliseconds (1 second)
+        unitDiv.style.display = 'none';
+    }, 1000); // Hide the unit after 1000 milliseconds (1 second)
 }
 
+function gameOver() {
+    const overlay = document.getElementById('overlay');
+    const playAgainBox = document.getElementById('play-again-box');
+
+    overlay.style.display = 'block'; // Show the overlay
+    playAgainBox.style.display = 'flex'; // Show the play again box
+}
+
+
 function updateGame() {
-    fetch('/random-data')
+    fetch('/getcontacts')
         .then(response => response.json())
         .then(data => {
             const gameDiv = document.getElementById('game');
@@ -33,11 +42,11 @@ function updateGame() {
 
             data.forEach(item => {
                 const img = document.createElement('img');
-                img.src = `images/${item.imageName}`;
+                img.src = item.imageUrl;
                 img.onclick = () => {
                     if (item.name === randomName) {
                         score++;
-                        showDepartment(data[randomIndex].department); // Access randomIndex here
+                        showunit(data[randomIndex].unit); // Access randomIndex here
                     } else {
                         score = Math.max(0, score - 1);
                         flashBackgroundRed();
@@ -45,7 +54,7 @@ function updateGame() {
                     document.getElementById('score').innerText = `Score: ${score}`;
 
                     if (score === 0) {
-                        window.location.href = '/game-over.htm';
+                        gameOver();
                     } else {
                         updateGame();
                     }

@@ -5,14 +5,25 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Kend din wingman</h1>
-    <h2>Kan du gætte hvem jeg er?</h2>
-    <div id="name"></div>
-    <div id="game"></div>
-   
-    <div id="department" style="display: none;">Department</div> <!-- Placeholder for department -->
-
-    <div id="score">Score: 0</div>
+    <div class="container">
+        <h1>Kend din wingman</h1>
+        <h2>Kan du gætte hvem jeg er?</h2>
+        <div id="score">Score: 0</div>
+        <div id="name"></div>
+        <div id="game"></div>
+        <div id="unit"></div> <!-- Placeholder for department -->
+    </div>
     <script src="script.js"></script>
+    <!-- Inside the body, preferably at the end -->
+    <div id="overlay"></div>
+    <div id="play-again-box">
+        <p>Game Over</p>
+        <button onclick="location.reload()">Play Again</button>
+    </div>
+
+    <!-- Link to Level 2 -->
+    <div class="level-link">
+        <p>Is this too easy? Try <a href="level2.htm">Level 2</a></p>
+    </div>
 </body>
 </html>
